@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+// Union 정의
+union MyUnion {
+    int integer;
+    float floating_point;
+    char character;
+};
+
+int main() {
+    union MyUnion myUnion;
+
+    myUnion.integer = 42;
+    printf("Integer: %d\n", myUnion.integer);
+
+    myUnion.floating_point = 3.14;
+    printf("Floating Point: %f\n", myUnion.floating_point);
+
+    myUnion.character = 'A';
+    printf("Character: %c\n", myUnion.character);
+
+    return 0;
+}
+
+MyUnion이라는 union을 정의하고, 이 union을 사용하여 다른 데이터 유형의 값을 저장합니다.
+처음에는 정수를 저장하고, 다음에는 부동 소수점 수를 저장하고, 마지막으로 문자를 저장합니다.
+이러한 값들은 동일한 메모리 위치에 저장되므로, 하나를 변경하면 다른 값들도 변경됩니다.
