@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+// Enum 정의
+enum DaysOfWeek {
+    SUNDAY,    // 0
+    MONDAY,    // 1
+    TUESDAY,   // 2
+    WEDNESDAY, // 3
+    THURSDAY,  // 4
+    FRIDAY,    // 5
+    SATURDAY   // 6
+};
+
+int main() {
+    enum DaysOfWeek today = WEDNESDAY;
+
+    switch (today) {
+        case SUNDAY:
+            printf("It's Sunday.\n");
+            break;
+        case MONDAY:
+            printf("It's Monday.\n");
+            break;
+        case WEDNESDAY:
+            printf("It's Wednesday.\n");
+            break;
+        default:
+            printf("It's neither Sunday nor Monday.\n");
+    }
+
+    return 0;
+}
+
+DaysOfWeek라는 enum을 정의하고, 이를 사용하여 요일을 나타냅니다.
+각 요일은 0부터 6까지의 정수 값으로 매핑되며, today 변수에 현재 요일을 저장한 후 switch 문을 사용하여 해당하는 요일을 출력합니다.
+이렇게 하면 코드가 가독성이 높아지며 유지보수가 쉬워집니다.
