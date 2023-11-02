@@ -1,0 +1,64 @@
+가감승제_라이브러리
+
+// mymath.h 파일
+
+#ifndef MYMATH_H
+#define MYMATH_H
+
+// 두 정수를 더하는 함수
+int add(int a, int b);
+
+// 두 정수를 빼는 함수
+int subtract(int a, int b);
+
+// 두 정수를 곱하는 함수
+int multiply(int a, int b);
+
+// 두 정수를 나누는 함수
+int divide(int a, int b);
+
+#endif
+
+
+// mymath.c 파일
+
+#include "mymath.h"
+
+// 두 정수를 더하는 함수
+int add(int a, int b) {
+    return a + b;
+}
+
+// 두 정수를 빼는 함수
+int subtract(int a, int b) {
+    return a - b;
+}
+
+// 두 정수를 곱하는 함수
+int multiply(int a, int b) {
+    return a * b;
+}
+
+// 두 정수를 나누는 함수
+int divide(int a, int b) {
+    return a / b;
+}
+
+
+// main.c 파일
+
+#include <stdio.h>
+#include "mymath.h"
+
+int main() {
+    int num1 = 22;
+    int num2 = 33;
+    int result;
+
+    // 두 정수를 더함
+    result = add(num1, num2);
+
+    printf("%d + %d = %d\n", num1, num2, result);
+
+    return 0;
+}
