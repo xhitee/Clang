@@ -1,0 +1,13 @@
+int ledPin = 12; // LED가 연결된 핀 번호
+int interval = 2000; // 깜박이는 간격 (2초)
+
+void setup() {
+  pinMode(ledPin, OUTPUT); // LED 핀을 출력 모드로 설정
+}
+
+void loop() {
+  digitalWrite(ledPin, HIGH); // LED를 켜기
+  delay(interval); // 일정 시간 대기 (2초)
+  digitalWrite(ledPin, LOW); // LED를 끄기
+  delay(interval); // 일정 시간 대기 (2초)
+}
