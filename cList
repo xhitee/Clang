@@ -1,0 +1,65 @@
+1. 리스트에 대한 정의:
+리스트는 데이터 요소들이 순서를 가지고 나열된 자료구조입니다.
+
+각 요소는 데이터 값을 가지고 있으며, 이전 요소와 다음 요소를 가리키는 링크(포인터)를 통해 연결되어 있습니다.
+
+리스트는 크기를 동적으로 조정할 수 있으며, 데이터의 삽입, 삭제, 탐색 등 다양한 연산을 지원합니다.
+
+2. 리스트의 응용:
+- 데이터의 삽입과 삭제가 빈번한 경우에 유용합니다.
+
+    배열과 달리 리스트는 크기를 동적으로 조정할 수 있기 때문에, 데이터의 삽입과 삭제가 용이합니다.
+- 데이터의 정렬, 탐색, 필터링 등의 작업을 수행할 수 있습니다.
+
+    리스트는 데이터가 순서대로 연결되어 있기 때문에, 정렬된 순서로 데이터를 유지하거나 특정 조건을 만족하는
+
+    데이터를 탐색하거나 걸러내는 작업에 유용합니다.
+- 그래프와 관련된 문제를 해결할 때 사용될 수 있습니다.
+
+    리스트는 그래프의 간선 정보를 나타내는 인접 리스트(Adjacency List)로 사용되기도 합니다.
+
+3. 리스트 구현 :
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+    int data;
+    struct node* next;
+} Node;
+
+typedef struct linkedList {
+    Node* head;
+} LinkedList;
+
+void initList(LinkedList* list) {
+    list->head = NULL;
+}
+
+void insertFront(LinkedList* list, int data) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = data;
+    newNode->next = list->head;
+    list->head = newNode;
+}
+
+void printList(LinkedList* list) {
+    Node* current = list->head;
+    while (current != NULL) {
+        printf("%d ", current->data);
+        current = current->next;
+    }
+    printf("\n");
+}
+
+int main() {
+    LinkedList list;
+    initList(&list);
+
+    insertFront(&list, 3);
+    insertFront(&list, 2);
+    insertFront(&list, 1);
+
+    printList(&list);
+
+    return 0;
+}
